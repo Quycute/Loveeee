@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dành cho Minh Thư ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            animation: slideIn 1s ease-out;
+            min-height: 700px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .photo-frame {
+            width: 250px;
+            height: 250px;
+            margin: 30px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #e74c3c;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            animation: rotate 20s linear infinite;
+            position: relative;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: rotateReverse 20s linear infinite;
+        }
+
+        @keyframes rotateReverse {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .message {
+            font-size: 1.3em;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            color: white;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(231, 76, 60, 0.6);
+        }
+
+        .button-no {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            color: white;
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 8px 20px rgba(127, 140, 141, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .button-no:hover {
+            background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            color: #e74c3c;
+            animation: fall linear forwards;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkleAnim 1.5s ease-out forwards;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes sparkleAnim {
+            0% {
+                opacity: 1;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+        .love-text {
+            font-size: 1.1em;
+            color: #e74c3c;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        #response {
+            margin-top: 30px;
+            font-size: 2em;
+            color: #27ae60;
+            display: none;
+            animation: bounceIn 0.8s;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .floating-hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        .music-control:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+<body>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://litter.catbox.moe/zoyqc9w2729vn0ui.m4a" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button class="music-control" id="musicBtn" onclick="toggleMusic()">🔇</button>
+    
+    <div class="floating-hearts-bg"></div>
+    
+    <div class="container">
+        <h1>💕 Minh Thư Yêu Dấu 💕</h1>
+        
+        <div class="photo-frame">
+            <img src="https://6990b7de681c79fa0bccfeec.imgix.net/IMG_1771090561925_1771091705961.jpg?w=1220&h=1317" alt="Minh Thư">
+        </div>
+        
+        <div class="message">
+            <p>Em là ánh sáng trong cuộc đời anh 🌟</p>
+            <p>Mỗi ngày bên em đều là món quà quý giá nhất 🎁</p>
+            <p>Anh muốn được nắm tay em, đi cùng em trên mọi nẻo đường 🌈</p>
+        </div>
+        
+        <div class="love-text">
+            "Trong vạn người, anh chỉ thấy em thôi..."
+        </div>
+        
+        <button class="button" onclick="showResponse()">💖 Em đồng ý nhé!</button>
+        <button class="button-no" id="noButton" onmouseover="moveButton()" onclick="moveButton()">😢 Không đồng ý</button>
+        
+        <div id="response">
+            🎉 Anh yêu em nhiều lắm! 🎉
+        </div>
+    </div>
+
+    <script>
+        // Xử lý nhạc nền
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        let isPlaying = false;
+
+        // Bật/tắt nhạc
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.innerHTML = '🔇';
+                isPlaying = false;
+            } else {
+                bgMusic.play().catch(e => console.log('Không thể phát nhạc:', e));
+                musicBtn.innerHTML = '🔊';
+                isPlaying = true;
+            }
+        }
+
+        // Thử phát nhạc khi user click vào trang (vì trình duyệt chặn autoplay)
+        document.addEventListener('click', function playOnFirstClick() {
+            if (!isPlaying) {
+                bgMusic.play().then(() => {
+                    musicBtn.innerHTML = '🔊';
+                    isPlaying = true;
+                }).catch(e => console.log('Chưa thể phát:', e));
+            }
+        }, { once: true });
+
+        // Tạo trái tim rơi liên tục
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '-50px';
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            
+            const duration = Math.random() * 3 + 3;
+            heart.style.animationDuration = duration + 's';
+            
+            const swayAmount = (Math.random() - 0.5) * 100;
+            heart.style.transform = `translateX(${swayAmount}px)`;
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+
+        // Tạo trái tim mới mỗi 300ms
+        setInterval(createFallingHeart, 300);
+
+        // Tạo hiệu ứng lấp lánh khi di chuột
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.8) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = e.pageX + 'px';
+                sparkle.style.top = e.pageY + 'px';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1500);
+            }
+        });
+
+        // Hiển thị phản hồi khi nhấn nút
+        function showResponse() {
+            const response = document.getElementById('response');
+            response.style.display = 'block';
+            
+            // Ẩn nút "Không đồng ý"
+            document.getElementById('noButton').style.display = 'none';
+            
+            // Tạo nhiều trái tim bay lên
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    createExplodingHeart();
+                }, i * 50);
+            }
+        }
+
+        // Di chuyển nút "Không đồng ý" đến vị trí ngẫu nhiên
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const container = document.querySelector('.container');
+            
+            // Lấy kích thước container và button
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = button.getBoundingClientRect();
+            
+            // Tính toán vị trí ngẫu nhiên trong container
+            const maxX = containerRect.width - buttonRect.width - 40;
+            const maxY = containerRect.height - buttonRect.height - 40;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            // Di chuyển button
+            button.style.position = 'absolute';
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+            button.style.transition = 'all 0.3s ease';
+        }
+
+        // Tạo trái tim bay lên khi nhấn nút
+        function createExplodingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'fixed';
+            heart.style.left = '50%';
+            heart.style.top = '50%';
+            heart.style.fontSize = '30px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '1000';
+            
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.random() * 5 + 3;
+            const vx = Math.cos(angle) * velocity;
+            const vy = Math.sin(angle) * velocity;
+            
+            document.body.appendChild(heart);
+            
+            let x = 0, y = 0;
+            const animation = setInterval(() => {
+                x += vx;
+                y += vy;
+                heart.style.transform = `translate(${x}px, ${y}px) scale(${1 - Math.abs(y) / 200})`;
+                heart.style.opacity = 1 - Math.abs(y) / 200;
+                
+                if (Math.abs(y) > 200) {
+                    clearInterval(animation);
+                    heart.remove();
+                }
+            }, 16);
+        }
+
+        // Tạo hiệu ứng trái tim nền ban đầu
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createFallingHeart, i * 200);
+        }
+    </script>
+</body>
+</html>
